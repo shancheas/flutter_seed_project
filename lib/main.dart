@@ -1,13 +1,14 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
+import 'app/components/app_components.dart';
 import 'routes/route.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   
-  _MyApp() {
+  MyApp() {
     final router = Router();
     Routes.app = router;
     Routes.configureRoutes(router);
@@ -21,12 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: Routes.app.generator,
-      home: Scaffold(
-        appBar: AppBar(title: Text('Seed Project')),
-        body: Center(
-          child: Text('Hello Awesome World!'),
-        ),
-      ),
+      home: AppComponents(),
     );
   }
 }
